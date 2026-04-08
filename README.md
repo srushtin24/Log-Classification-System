@@ -45,7 +45,7 @@ LLM Classification (LLaMA 3)<br><br>
 
 #### Model  
 - all-MiniLM-L6-v2 (Sentence Transformers)  
-- A **distilled BERT-family model (SBERT architecture)**  
+- A **distilled BERT-family MiniLM (Sentence-BERT)**  
 
 #### Approach  
 - Convert log messages into **dense semantic embeddings**  
@@ -61,14 +61,13 @@ log → embedding (MiniLM) → classifier → label
 
 - Uses prediction probabilities to filter low-confidence outputs  
 
-python
 if max(probabilities) < 0.5:
     return "Unclassified"<br>
 
 ### 3. LLM-Based Classification (Fallback Layer)
 #### Model
 - LLaMA 3 (via Groq API)
-####Method
+#### Method
 - Prompt-based classification
 - Structured output enforced using tags
 
@@ -81,10 +80,10 @@ Handles:
 
 
 ### 4. Source-Aware Routing
-if source == "LegacyCRM":
-    use LLM
-else:
-    use Regex → ML → fallback
+if source == "LegacyCRM":<br>
+    use LLM<br>
+else:<br>
+    use Regex → ML → fallback<br>
    
 - Legacy systems → directly handled by LLM
 - Modern systems → processed through efficient pipeline<br>
@@ -106,20 +105,20 @@ else:
 
 ## 🛠️ Tech Stack
 #### AI / ML
-Sentence Transformers (MiniLM - BERT-based)
-Scikit-learn
-DBSCAN (clustering)
+- Sentence Transformers (MiniLM - BERT-family)
+- Scikit-learn
+- DBSCAN (clustering)
 #### LLM
-LLaMA 3 (Groq API)
-Prompt Engineering
-Regex-based output parsing
+- LLaMA 3 (Groq API)
+- Prompt Engineering
+- Regex-based output parsing
 #### Backend
-FastAPI
-Pandas
-Python
+- FastAPI
+- Pandas
+- Python
 #### Utilities
-Joblib (model loading)
-dotenv (environment variables)<br>
+- Joblib (model loading)
+- dotenv (environment variables)<br>
 
 ## 📊 Key Features
 - Hybrid pipeline (Rule-based + ML + LLM)
