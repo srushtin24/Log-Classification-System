@@ -7,19 +7,19 @@ This project implements a **hybrid log classification system** that combines **r
 The system is designed to:
 - Efficiently classify structured and unstructured logs  
 - Handle unseen or ambiguous log patterns  
-- Balance **latency, cost, and accuracy** in a production-style setup  
+- Balance **latency, cost, and accuracy** in a production-style setup<br>
 
 
 ## 🧠 Architecture
 
 ### Cascaded Inference Pipeline
-Log Message
-↓
-Regex Classification (Rule-Based)
-↓ (if no match)
-Embedding + Classifier (BERT-based MiniLM)
-↓ (if low confidence / special source)
-LLM Classification (LLaMA 3)
+Log Message<br>
+↓<br>
+Regex Classification (Rule-Based)<br>
+↓ (if no match)<br>
+Embedding + Classifier (BERT-based MiniLM)<br>
+↓ (if low confidence / special source)<br>
+LLM Classification (LLaMA 3)<br>
 
 
 
@@ -36,7 +36,7 @@ LLM Classification (LLaMA 3)
 **Characteristics:**
 - Deterministic  
 - No training required  
-- High precision for known patterns  
+- High precision for known patterns<br>
 
 
 ### 2. BERT-Based Embedding + Classification
@@ -50,12 +50,10 @@ LLM Classification (LLaMA 3)
 - Use a **supervised classifier** (loaded via `joblib`) on top of embeddings  
 log → embedding (MiniLM) → classifier → label
 
-
 #### Why this approach  
 - Captures semantic meaning of logs  
 - Handles variations in log format  
-- More efficient than full BERT fine-tuning  
-
+- More efficient than full BERT fine-tuning  <br>
 
 ### Confidence Thresholding
 
@@ -63,11 +61,7 @@ log → embedding (MiniLM) → classifier → label
 
 python
 if max(probabilities) < 0.5:
-    return "Unclassified"
-
-
-
-
+    return "Unclassified"<br>
 
 ### 3. LLM-Based Classification (Fallback Layer)
 #### Model
@@ -80,7 +74,7 @@ if max(probabilities) < 0.5:
 Handles:
 - Ambiguous logs
 - Rare/unseen patterns
-- Inconsistent legacy logs
+- Inconsistent legacy logs<br>
 
 
 
@@ -91,7 +85,7 @@ else:
     use Regex → ML → fallback
    
 - Legacy systems → directly handled by LLM
-- Modern systems → processed through efficient pipeline
+- Modern systems → processed through efficient pipeline<br>
 
 #### 🔍 Unsupervised Learning (DBSCAN)
 - Algorithm
@@ -104,7 +98,7 @@ else:
 - Impact
   - Improved understanding of log distribution
   - Assisted in labeling strategy
-  - Helped identify edge cases handled by LLM
+  - Helped identify edge cases handled by LLM<br>
 
 
 
@@ -123,7 +117,7 @@ Pandas
 Python
 #### Utilities
 Joblib (model loading)
-dotenv (environment variables)
+dotenv (environment variables)<br>
 
 ## 📊 Key Features
 - Hybrid pipeline (Rule-based + ML + LLM)
@@ -131,11 +125,11 @@ dotenv (environment variables)
 - Confidence-based classification filtering
 - Outlier-aware design using DBSCAN insights
 - Source-aware intelligent routing
-- Batch processing via API
+- Batch processing via API<br>
 
 ## 📈 Future Improvements
 - Fine-tuning transformer models on log-specific data
 - Active learning for continuous model updates
 - LLM response caching
 - Real-time log streaming support
-- Model monitoring and evaluation metrics
+- Model monitoring and evaluation metrics<br>
