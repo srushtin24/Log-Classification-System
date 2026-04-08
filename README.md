@@ -14,11 +14,11 @@ The system is designed to:
 
 ### Cascaded Inference Pipeline
 Log Message<br><br>
-↓<br>
+↓<br><br>
 Regex Classification (Rule-Based)<br><br>
-↓ (if no match)<br>
+↓ (if no match)<br><br>
 Embedding + Classifier (BERT-based MiniLM)<br><br>
-↓ (if low confidence / special source)<br>
+↓ (if low confidence / special source)<br><br>
 LLM Classification (LLaMA 3)<br><br>
 
 <p align="center">
