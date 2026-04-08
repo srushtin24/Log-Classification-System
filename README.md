@@ -7,7 +7,7 @@ This project implements a **hybrid log classification system** that combines **r
 The system is designed to:
 - Efficiently classify structured and unstructured logs  
 - Handle unseen or ambiguous log patterns  
-- Balance **latency, cost, and accuracy** in a production-style setup<br>
+- Balance **latency, cost, and accuracy** in a production-style setup<br><br>
 
 
 ## 🧠 Architecture
@@ -24,6 +24,8 @@ LLM Classification (LLaMA 3)<br><br>
 <p align="center">
    <img src="1.png" width="800" hspace="40">
 </p>
+<br><br>
+
 
 ## ⚙️ Core Components
 
@@ -99,7 +101,7 @@ else:<br>
 - Impact
   - Improved understanding of log distribution
   - Assisted in labeling strategy
-  - Helped identify edge cases handled by LLM<br>
+  - Helped identify edge cases handled by LLM<br><br>
 
 
 
@@ -118,7 +120,7 @@ else:<br>
 - Python
 #### Utilities
 - Joblib (model loading)
-- dotenv (environment variables)<br>
+- dotenv (environment variables)<br><br>
 
 ## 📊 Key Features
 - Hybrid pipeline (Rule-based + ML + LLM)
@@ -126,7 +128,7 @@ else:<br>
 - Confidence-based classification filtering
 - Outlier-aware design using DBSCAN insights
 - Source-aware intelligent routing
-- Batch processing via API<br>
+- Batch processing via API<br><br>
 
 ## 📈 Future Improvements
 - Fine-tuning transformer models on log-specific data
