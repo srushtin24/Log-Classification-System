@@ -13,13 +13,13 @@ The system is designed to:
 ## 🧠 Architecture
 
 ### Cascaded Inference Pipeline
-Log Message<br>
+Log Message<br><br>
 ↓<br>
-Regex Classification (Rule-Based)<br>
+Regex Classification (Rule-Based)<br><br>
 ↓ (if no match)<br>
-Embedding + Classifier (BERT-based MiniLM)<br>
+Embedding + Classifier (BERT-based MiniLM)<br><br>
 ↓ (if low confidence / special source)<br>
-LLM Classification (LLaMA 3)<br>
+LLM Classification (LLaMA 3)<br><br>
 
 <p align="center">
    <img src="1.png" width="800" hspace="40">
