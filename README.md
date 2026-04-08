@@ -13,7 +13,7 @@ The system is designed to:
 ## 🧠 Architecture
 
 ### Cascaded Inference Pipeline
-Log Message<br>
+Log Message<br><br>
 ↓<br><br>
 Regex Classification (Rule-Based)<br><br>
 ↓ (if no match)<br><br>
