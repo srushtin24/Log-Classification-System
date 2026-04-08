@@ -21,7 +21,9 @@ Embedding + Classifier (BERT-based MiniLM)<br>
 ↓ (if low confidence / special source)<br>
 LLM Classification (LLaMA 3)<br>
 
-
+<p align="center">
+   <img src="1.png" width="800" hspace="40">
+</p>
 
 ## ⚙️ Core Components
 
